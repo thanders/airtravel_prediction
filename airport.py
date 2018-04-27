@@ -10,51 +10,19 @@ sys.path.append('.')
 
 class Airport:
 
-    def __init__(self, airportID, airportName, cityName, country, code, ICAOcode, latitude, longitude, altitude, timeOffset, dst, tz):
+    def __init__(self, ICAOcode, latitude, longitude, country, airportName, cityName, to_EUR, currency_code):
         # Variables to store OWM connection data:
-        self._airportID = airportID
+        self.ICAOcode = ICAOcode
+        self.latitude = latitude
+        self.longitude = longitude
+        self.country = country
         self.airportName = airportName
-        self._cityName = cityName
-        self._country = country
-        self._code = code
-        self._ICAOcode = ICAOcode
-        self._latitude = latitude
-        self._longitude = longitude
-        self._altitude = altitude
-        self._timeOffset = timeOffset
-        self._dst = dst
-        self._tz = tz
+        self.cityName = cityName
+        self.to_EUR = to_EUR
+        self.currency_code = currency_code
 
-# Airport ID
-    @property
-    def airportID(self):
-        return self._airportID
-
-    @airportID.setter
-    def set_airportID(self, airportID):
-        self._airportID = airportID
-
-# Airport Country name:
-    @property
-    def country(self):
-        return self._country
-
-    @airportID.setter
-    def set_country(self, country):
-        self._country = country
-
-    # Airport Country name:
-    @property
-    def code(self):
-        return self._code
-
-    @airportID.setter
-    def set_code(self, code):
-        self._code = code
-
-
-    def print(self):
-        print(self._airportID, self.airportName, self._cityName, self._country, self._code, self._ICAOcode, self._latitude, self._longitude, self._altitude, self._timeOffset, self._dst, self._tz)
+    def tostring(self):
+        print(self.ICAOcode, self.country, self.cityName, self.airportName, self.latitude, self.longitude, self.to_EUR, self.currency_code)
 
     # Python Class Encapsulation - Properties (getter), setters
 

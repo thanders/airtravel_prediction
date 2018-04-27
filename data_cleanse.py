@@ -4,7 +4,7 @@ import pandas
 # Pandas settings:
 pandas.set_option('display.max_rows', 999)
 pandas.set_option('display.max_columns', 999)
-pandas.set_option('precision', 5)
+pandas.set_option('precision', 2)
 
 # File variables:
 file_country_currency = 'countrycurrency.csv'
@@ -23,7 +23,9 @@ class DataCleanse:
         self.df = pandas.read_csv(self.file_folder+self.file_name, keep_default_na=True, sep=',\s+', delimiter=',', skipinitialspace=False)
         self.rows = self.df.shape[0]
         self.columns = self.df.shape[1]
-        self.naan = None
+        self.airport_cc_df = None
+        self.airport_file_merged = 'clean_airport_cc.csv'
+        self.aircraft_file_clean = 'clean_aircraft.csv'
 
     def null_count(self):
         print()
@@ -32,72 +34,74 @@ class DataCleanse:
 
     def clean(self):
         self.df.drop_duplicates()  # Remove duplicate rows
-        print("Cleaning ", self.file_name, ":")
+        print("Cleaning : ", self.file_name)
 
         # Cleaning specific to the currencyrates.csv file:
         if self.file_name == 'currencyrates.csv':
-            print("Removing currency code duplicates")
+            # Remove currency code duplicates
             self.df.drop_duplicates(subset='currency_code', keep="last")
+            # Drop columns
             self.df.drop(columns=['currency_name'], axis=1, inplace=True)
 
         # Cleaning specific to the countrycurrency.csv file:
         if self.file_name == 'countrycurrency.csv':
-            print("Dropped columns that aren't required")
-            self.df.drop(columns=['name', 'name_fr', 'ISO3166-1-Alpha-2', 'ISO3166-1-Alpha-3', 'ISO3166-1-numeric', 'ITU', 'MARC', 'WMO', 'DS', 'Dial', 'FIFA', 'FIPS', 'GAUL', 'IOC', 'currency_minor_unit', 'currency_name', 'currency_numeric_code', 'is_independent'], axis=1, inplace=True)
+            # drop columns that aren't required
+            self.df.drop(columns=['name_fr', 'ISO3166-1-Alpha-2', 'ISO3166-1-Alpha-3', 'ISO3166-1-numeric', 'ITU', 'MARC', 'WMO', 'DS', 'Dial', 'FIFA', 'FIPS', 'GAUL', 'IOC', 'currency_minor_unit', 'currency_name', 'currency_numeric_code', 'is_independent', 'currency_country_name'], axis=1, inplace=True)
             self.df.dropna(axis=0, how='all')
-            self.df = self.df[self.df['currency_country_name'].notnull()]
+            # drop entire rows where currency code is null
             self.df = self.df[self.df['currency_code'].notnull()]
+            # convert country_key column to lowercase
+            self.df['country_key'] = self.df['country_key'].str.lower()
 
         # Cleaning specific to the airport.csv file:
         if self.file_name == 'airport.csv':
-            self.df = self.df[self.df['OAHR'].notnull()]
+            self.df = self.df[self.df['a_icao'].notnull()]
+            # drop columns that aren't required
+            self.df.drop(columns=['a1', 'a2', 'a3', 'a4'], axis=1, inplace=True)
+            # Convert strings in column to uppercase:
+            self.df['country_key'] = self.df['country_key'].str.lower()
 
-    @staticmethod
-    def process_files():
-        print("Clean data:")
-        cleanse_country.clean()
-        cleanse_currency.clean()
-        cleanse_airport.clean()
-        cleanse_aircraft.clean()
+        # If filename is aircraft.csv perform the merge:
+        if self.file_name == file_airport or self.file_name == file_c_rates:
+            self.merge()
+        self.export()
 
-    @staticmethod
-    def export_files():
-        cleanse_country.export()
-        cleanse_currency.export()
-        cleanse_airport.export()
-        cleanse_aircraft.export()
+    # Performs merging operations (if necessary)
+    def merge(self):
 
-    @staticmethod
-    def merge():
+        # Merge countrycurrency and currencyrates csv files
+        country_currency = pandas.merge(country_c.df, currency_c.df, on=['currency_code'])
+        # Merge country_currency_df with cleanse_airport.df
+        self.airport_cc_df = pandas.merge(airport_c.df, country_currency, on='country_key')
 
-        # Merge countrycurrency.csv and currencyrates.csv
-        global Country_Currency
-        Country_Currency = pandas.merge(cleanse_country.df, cleanse_currency.df, how='left', left_on=['currency_code'],
-                                        right_on=['currency_code'])
-
+    # Exports files
     def export(self):
-        if self.file_name == 'countrycurrency.csv' or self.file_name == 'currencyrates.csv':
-            Country_Currency.to_csv('clean_files/Clean_Country_Currency.csv')
-        else:
-            self.df.to_csv('clean_files/'+self.file_name+'.csv')
+        if self.file_name == file_airport:
+            # index = false removes the index from the CSV file
+            self.airport_cc_df.to_csv('clean_files/'+self.airport_file_merged, index=False)
+            print('Created  : ', self.airport_file_merged)
+        elif self.file_name == file_aircraft:
+            self.df.to_csv('clean_files/'+self.aircraft_file_clean, index=False)
+            print('Created  : ', self.aircraft_file_clean)
+
+    @staticmethod
+    # Create instances for each file:
+    def initialize():
+        global country_c, currency_c, airport_c, aircraft_c
+        country_c = DataCleanse(file_country_currency)
+        currency_c = DataCleanse(file_c_rates)
+        airport_c = DataCleanse(file_airport)
+        aircraft_c = DataCleanse(file_aircraft)
+        print("DataCleanse instances initialized")
+        return country_c, currency_c, airport_c, aircraft_c
+
+    @staticmethod
+    # Create instances for each file:
+    def start_clean():
+        country_c.clean()
+        currency_c.clean()
+        airport_c.clean()
+        aircraft_c.clean()
+        return 0
 
 
-# Create instances of each class:
-cleanse_country = DataCleanse(file_country_currency)
-cleanse_currency = DataCleanse(file_c_rates)
-cleanse_airport = DataCleanse(file_airport)
-cleanse_aircraft = DataCleanse(file_aircraft)
-
-
-# Perform data cleanse:
-DataCleanse.process_files()
-
-# Merge files:
-DataCleanse.merge()
-
-# Export clean csv files:
-DataCleanse.export_files()
-
-
-# Load new countrycurrency file into CCAtlas with rates
-# Load airport into airport class

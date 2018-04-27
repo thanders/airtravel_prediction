@@ -1,4 +1,4 @@
-name,name_fr,ISO3166-1-Alpha-2,ISO3166-1-Alpha-3,ISO3166-1-numeric,ITU,MARC,WMO,DS,Dial,FIFA,FIPS,GAUL,IOC,currency_code,currency_country_name,currency_minor_unit,currency_name,currency_numeric_code,is_independent
+country_key,name_fr,ISO3166-1-Alpha-2,ISO3166-1-Alpha-3,ISO3166-1-numeric,ITU,MARC,WMO,DS,Dial,FIFA,FIPS,GAUL,IOC,currency_code,currency_country_name,currency_minor_unit,currency_name,currency_numeric_code,is_independent
 Afghanistan,Afghanistan,AF,AFG,4,AFG,af,AF,AFG,93,AFG,AF,1,AFG,AFN,AFGHANISTAN,2,Afghani,971,Yes
 Albania,Albanie,AL,ALB,8,ALB,aa,AB,AL,355,ALB,AL,3,ALB,ALL,ALBANIA,2,Lek,8,Yes
 Algeria,Algérie,DZ,DZA,12,ALG,ae,AL,DZ,213,ALG,AG,4,ALG,DZD,ALGERIA,2,Algerian Dinar,12,Yes

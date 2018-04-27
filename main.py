@@ -3,33 +3,87 @@ import sys
 import datetime
 from time import sleep
 from aircraft import Aircraft
-from airport import Airport
-from CCAtlas import CCAtlas
+from load_aircraft import LoadAircraft
 from airportAtlas import AirportAtlas
+from data_cleanse import DataCleanse
 import pprint
 
-# This will always return the same object
-sys.path.append('.')
 
 def main():
-    """Console script for led_tester."""
+    """Main method for airplane"""
 
-    # Initalize the Airport class:
+    country_c, currency_c, airport_c, aircraft_c = DataCleanse.initialize()
 
-    filename = "airport.csv"
-    airports = AirportAtlas.load_data(filename)
-    KJFK = airports['KJFK']
+    DataCleanse.start_clean()
 
-    print(KJFK.airportName, KJFK.airportID, KJFK.country, KJFK.code)
+    #print(airport_c.airport_cc_df.head(n=3))
+
+    # Initialize the Airport class:
+
     print()
-    # Initalize the CountryCurrency class:
-    filename = "countrycurrency.csv"
-    CC = CCAtlas.load_data(filename)
 
-    US = CC['UNITED STATES'].currency_country_name
-    print(US)
+    airports_dict = AirportAtlas.load_data(airport_c.airport_file_merged)
+    KJFK = airports_dict['KJFK']
 
-    return 0
+    print('Number of airports initialized:', len(airports_dict))
+
+    print('Example:')
+    KJFK.tostring()
+
+    aircraft_dict = LoadAircraft.load_data(aircraft_c.aircraft_file_clean)
+    print()
+    print('Number of aircraft initialized:', len(aircraft_dict))
+    print('Example:')
+    aircraft_dict['BAE146'].tostring
+
+    print()
+    print()
+
+    itinerary_set = set([])
+
+    loop = True
+
+    print("Please enter four destinations (airport ICAO codes).")
+    print("The first code you enter is your destination")
+    try:
+
+        while loop:
+            air_code = str(input("Input code:"))
+
+            if (air_code not in itinerary_set) and len(itinerary_set) < 3:
+                itinerary_set.add(air_code)
+                print("Set", itinerary_set, "Size:", len(itinerary_set))
+                print()
+
+            elif len(itinerary_set) == 3:
+                itinerary_set.add(air_code)
+                print("Set", itinerary_set, "Size:", len(itinerary_set))
+                print()
+                print("Thank-you, I will now calculate the shortest path (fuel price weighted)")
+                loop = False
+
+            else:
+                print("Sorry that one is already in the set")
+
+            # raise ValueError("Sorry, I don't understand your input")
+
+
+    # except ValueError as e:
+    #    print(e)
+    #    main()
+
+    except KeyboardInterrupt:
+        print()
+        print("Goodbye!!")
+        exit()
+
+    except Exception as e:
+        print(e)
+
+
+
+
+
 
 
 if __name__ == "__main__":
