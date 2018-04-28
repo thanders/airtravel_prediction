@@ -6,6 +6,9 @@ from aircraft import Aircraft
 from load_aircraft import LoadAircraft
 from airportAtlas import AirportAtlas
 from data_cleanse import DataCleanse
+from user_input import UserInput
+
+
 import pprint
 
 
@@ -23,68 +26,26 @@ def main():
     print()
 
     airports_dict = AirportAtlas.load_data(airport_c.airport_file_merged)
-    KJFK = airports_dict['KJFK']
+    KJFK = airports_dict['JFK']
 
     print('Number of airports initialized:', len(airports_dict))
-
-    print('Example:')
-    KJFK.tostring()
+    # KJFK.tostring()
 
     aircraft_dict = LoadAircraft.load_data(aircraft_c.aircraft_file_clean)
     print()
     print('Number of aircraft initialized:', len(aircraft_dict))
-    print('Example:')
-    aircraft_dict['BAE146'].tostring
+    # aircraft_dict['BAE146'].tostring
 
     print()
     print()
 
-    itinerary_set = set([])
+    new_input = UserInput(airports_dict)
 
-    loop = True
-
-    print("Please enter four destinations (airport ICAO codes).")
-    print("The first code you enter is your destination")
-    try:
-
-        while loop:
-            air_code = str(input("Input code:"))
-
-            if (air_code not in itinerary_set) and len(itinerary_set) < 3:
-                itinerary_set.add(air_code)
-                print("Set", itinerary_set, "Size:", len(itinerary_set))
-                print()
-
-            elif len(itinerary_set) == 3:
-                itinerary_set.add(air_code)
-                print("Set", itinerary_set, "Size:", len(itinerary_set))
-                print()
-                print("Thank-you, I will now calculate the shortest path (fuel price weighted)")
-                loop = False
-
-            else:
-                print("Sorry that one is already in the set")
-
-            # raise ValueError("Sorry, I don't understand your input")
-
-
-    # except ValueError as e:
-    #    print(e)
-    #    main()
-
-    except KeyboardInterrupt:
-        print()
-        print("Goodbye!!")
-        exit()
-
-    except Exception as e:
-        print(e)
-
-
-
-
-
+    new_input.desc_program()
+    new_input.itinerary_size()
+    new_input.itinerary_input()
 
 
 if __name__ == "__main__":
+
     sys.exit(main())

@@ -21,10 +21,10 @@ class AirportAtlas:
             reader = csv.reader(f)
 
             for row in reader:
-                airport_code = row[5]
+                airport_code = row[4]
                 # remove cr
                 airports[airport_code] =\
-                    Airport(row[5], row[6], row[7], row[3], row[1], row[2], row[9], row[8])
+                    Airport(row[4], row[5], row[6], row[7], row[3], row[1], row[2], row[9], row[8])
         return airports
 
 

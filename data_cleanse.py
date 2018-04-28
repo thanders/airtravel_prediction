@@ -92,7 +92,7 @@ class DataCleanse:
         currency_c = DataCleanse(file_c_rates)
         airport_c = DataCleanse(file_airport)
         aircraft_c = DataCleanse(file_aircraft)
-        print("DataCleanse instances initialized")
+        print("DataCleanse instances initialized:")
         return country_c, currency_c, airport_c, aircraft_c
 
     @staticmethod

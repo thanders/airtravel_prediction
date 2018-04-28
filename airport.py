@@ -10,9 +10,10 @@ sys.path.append('.')
 
 class Airport:
 
-    def __init__(self, ICAOcode, latitude, longitude, country, airportName, cityName, to_EUR, currency_code):
+    def __init__(self, iata_code, icao_code, latitude, longitude, country, airportName, cityName, to_EUR, currency_code):
         # Variables to store OWM connection data:
-        self.ICAOcode = ICAOcode
+        self.iata_code = iata_code
+        self.icao_code = icao_code
         self.latitude = latitude
         self.longitude = longitude
         self.country = country

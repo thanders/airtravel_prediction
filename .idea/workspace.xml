@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29545e0f-802c-4f2e-9b6d-c4036c16dc2a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/user_input.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CCAtlas.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_aircraft.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CountryCurrency.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aircraft.py" beforeDir="false" afterPath="$PROJECT_DIR$/aircraft.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/airport.py" beforeDir="false" afterPath="$PROJECT_DIR$/airport.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/airportAtlas.py" beforeDir="false" afterPath="$PROJECT_DIR$/airportAtlas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean_files/Clean_Country_Currency.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean_files/aircraft.csv.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean_files/airport.csv.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data_cleanse.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_cleanse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_files/airport.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/airport.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_files/countrycurrency.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/countrycurrency.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_files/currencyrates.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_files/currencyrates.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_airport_atlas.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_airport_atlas.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,44 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="user_input.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user_input.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2448">
-              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-              <folding>
-                <element signature="e#24#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_cleanse.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_cleanse.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="load_aircraft.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/load_aircraft.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding>
-                <element signature="e#24#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="airport.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/airport.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="415">
+              <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
               </folding>
@@ -74,8 +43,8 @@
       <file leaf-file-name="airportAtlas.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/airportAtlas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="340">
+              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
               </folding>
@@ -99,7 +68,15 @@
       <find>currency code</find>
       <find>sys</find>
       <find>cleanse</find>
+      <find>loop</find>
+      <find>itinerary</find>
+      <find>dict</find>
+      <find>size</find>
+      <find>size_loop</find>
+      <find>itin</find>
+      <find>input_size</find>
       <find>good</find>
+      <find>set</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,15 +89,16 @@
         <option value="$PROJECT_DIR$/CCAtlas.py" />
         <option value="$PROJECT_DIR$/CountryCurrency.py" />
         <option value="$PROJECT_DIR$/tests/test.py" />
-        <option value="$PROJECT_DIR$/tests/test_airport_atlas.py" />
         <option value="$PROJECT_DIR$/clean_files/airport_country_currency.csv" />
         <option value="$PROJECT_DIR$/file_variables.py" />
-        <option value="$PROJECT_DIR$/data_cleanse.py" />
         <option value="$PROJECT_DIR$/load_aircraft.py" />
         <option value="$PROJECT_DIR$/aircraft.py" />
+        <option value="$PROJECT_DIR$/tests/test_airport_atlas.py" />
+        <option value="$PROJECT_DIR$/data_cleanse.py" />
         <option value="$PROJECT_DIR$/airport.py" />
         <option value="$PROJECT_DIR$/airportAtlas.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/user_input.py" />
       </list>
     </option>
   </component>
@@ -147,6 +125,11 @@
               <item name="airplane" type="b2602c69:ProjectViewProjectNode" />
               <item name="airplane" type="462c0819:PsiDirectoryNode" />
               <item name="clean_files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="airplane" type="b2602c69:ProjectViewProjectNode" />
+              <item name="airplane" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,17 +306,17 @@
     <frame x="98" y="35" width="2462" height="1565" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22952853" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3019024" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32971296" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.5050427" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.32971296" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39720714" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32971296" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39953452" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -366,30 +349,27 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user_input.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/user_input.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="e.args" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/airport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="15" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CountryCurrency.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CCAtlas.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -710,16 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test_airport_atlas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clean_files/aircraft.csv.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -756,47 +726,10 @@
     <entry file="file://$PROJECT_DIR$/airport_test.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_cleanse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aircraft.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airportAtlas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/airport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
-          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
-          <folding>
-            <element signature="e#24#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,6 +740,67 @@
           <folding>
             <element signature="e#24#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleanse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1957128335/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="5340" column="6" selection-start-line="5340" selection-start-column="6" selection-end-line="5340" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_airport_atlas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/airport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/airportAtlas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="e#24#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user_input.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
         </state>
       </provider>
     </entry>
