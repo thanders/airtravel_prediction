@@ -4,8 +4,7 @@ class UserInput:
     def __init__(self, airports_dict):
         # Variables to store OWM connection data:
         self.airports_dict = airports_dict
-        #self.itinerary_set = set([])
-        self.itinerary_dict = {}
+        self._itinerary_dict = {}
         self.size_loop = True
         self.itinerary_loop = True
         self.input_size = None
@@ -76,6 +75,20 @@ class UserInput:
                     # raise ValueError("Sorry, I don't understand your input")
             else:
                 print('Inputted ICAO code is invalid. It must be four alphabetic characters')
+        return 0
+
+# Getters and setters start here:
+
+    @property
+    # Pythonic way of doing a "getter"
+    def itinerary_dict(self):
+        return self._itinerary_dict
+
+
+
+
+
+
 
 '''
         except ValueError as e:

@@ -1,0 +1,103 @@
+\documentclass[oneside]{article}
+\usepackage[letterpaper, portrait, margin=0.5in]{geometry}
+\usepackage{hyperref}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=blue,
+	pdftitle={Sharelatex Example},
+	bookmarks=true,
+	pdfpagemode=FullScreen,
+}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\setcounter{secnumdepth}{-1}
+\usepackage{placeins}
+
+%Minted + environment%
+\usepackage{minted}
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}%
+\AfterEndEnvironment{minted}{\end{tcolorbox}}%
+
+\title{Group Project \\ Shortest (cheapest) Path - Project Documentation \\Data Structures and Algorithms (CS20230)}
+\large\author{Thomas Anderson\\ 17202065}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\setlength{\parindent}{0in}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\chead{\today}
+\rhead{Thomas Anderson - 17202065}
+
+\usepackage[toc,page]{appendix}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Functional Specification}
+
+
+My program was written to find the cheapest option (weighted shortest path) for a given number of inputs.\\
+
+The project requirements were to find the cheapest option when given:
+\begin{itemize}[nosep]
+\item A maximum route size of 5 IATA airport codes
+\item An specific airplane
+\item the latitude and longitude coordinates of the airports
+\item Airport, Aircraft, Country-currency and currency rate data in separate CSV files
+\end{itemize}
+
+My program calculates the shortest path using the "brute force" method. This means that I calculate the number of permutations of airports for a given input, calculate the great circle distance for each permutation and then take choose the cheapest option.\\
+
+The great circle distance is the shortest distance between two points on a sphere. It was used because it is needed to accurately measure the distances between airports.\\
+
+The program is written in an object oriented style in Python. Classes were created to for the various functions my program has to perform. Emphasis was given to cleaning the data prior to loading it into memory.\\
+
+
+\section{Design}
+
+\begin{enumerate}
+	
+\item Data structures for holding the information provided, i.e. implement Classes to load into mem- ory  Airport,  Currency  Rate  and  Country-Currency informations\\
+
+Dingle
+\item Code to calculate the distance between airports
+
+\item Code to price the cost of a single itinerary leg
+
+\item A data structure to store an itinerary (a multi-leg trip) that can be either a set for inputs or a sequence for the best route
+
+\item Calculate  the  distance  of  each  leg  of  a  given route (undirected graph with weighted edges)
+
+\item Calculate the cost of each leg of a given route (directed graph with weighted edges
+
+\item Code to permute all of the possible itineraries
+
+\item Code to price an given itinerary
+
+\item Calculate and display the cost of each leg of a given route
+
+\item Calculate  the  best  round  trip  route  (cheapest cost) for an itinerary returning to the home airport using each airport once (5 airport solution)
+
+\item Read in a testroutes.csv with airports and equipment as input and return a bestroutes.csv with the optimal route and cost of the route.
+
+\item Basic unit tests
+\end{enumerate}
+
+\section{Sprint Three}
+
+
+
+\section{Testing}
+
+
+\end{document}

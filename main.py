@@ -7,10 +7,20 @@ from load_aircraft import LoadAircraft
 from airportAtlas import AirportAtlas
 from data_cleanse import DataCleanse
 from user_input import UserInput
+from path_calculation import PathCalculation
 
 
 import pprint
 
+
+def obtain_coordinates(unordered_itinerary, airports_dict):
+    # Loop through dictionary
+    for i in unordered_itinerary:
+        # Obtain instance of class for each i in unordered_itinerary
+        airport_obj = airports_dict[i]
+        unordered_itinerary[i] = (airport_obj.latitude, airport_obj.longitude)
+
+    return unordered_itinerary
 
 def main():
     """Main method for airplane"""
@@ -45,6 +55,17 @@ def main():
     new_input.itinerary_size()
     new_input.itinerary_input()
 
+    unordered_itinerary = new_input.itinerary_dict
+
+    # Call function to add coordinates to the unordered_itinerary dictionary
+    unordered_itinerary = obtain_coordinates(unordered_itinerary, airports_dict)
+
+    # Create an instance of the PathCalculation class
+    path_calc = PathCalculation(unordered_itinerary)
+
+    shortest_path, price = path_calc.create_permutations()
+
+    print("Shortest path (cheapest flight):", shortest_path, "EUR", price)
 
 if __name__ == "__main__":
 

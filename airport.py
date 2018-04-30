@@ -23,7 +23,7 @@ class Airport:
         self.currency_code = currency_code
 
     def tostring(self):
-        print(self.ICAOcode, self.country, self.cityName, self.airportName, self.latitude, self.longitude, self.to_EUR, self.currency_code)
+        print(self.icao_code, self.country, self.cityName, self.airportName, self.latitude, self.longitude, self.to_EUR, self.currency_code)
 
     # Python Class Encapsulation - Properties (getter), setters
 
